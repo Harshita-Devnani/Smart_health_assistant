@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us - Health Care Center</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <div class="logo me-2">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
+            </div>
+            Health Center
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/blog' %}active{% endif %}" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {% if request.path in ['/about', '/developer', '/contact'] %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/about">About Us</a></li>
+                        <li><a class="dropdown-item" href="/developer">Our Team</a></li>
+                        <li><a class="dropdown-item" href="/contact">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <header class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p class="lead">Contact the development team or send us a general message.</p>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="card-custom">
+                        <h3 class="mb-4">Developer Contacts</h3>
+
+                        <h5>Lahar Joshi</h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-telephone fs-5 me-3" style="color: var(--primary-blue);"></i>
+                            <a href="tel:9509326676" class="text-decoration-none" style="color: var(--text-gray);">9351023881</a>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="bi bi-envelope fs-5 me-3" style="color: var(--primary-blue);"></i>
+                            <a href="mailto:23ucc566@lnmiit.ac.in" class="text-decoration-none" style="color: var(--text-gray);">23ucc566@lnmiit.ac.in</a>
+                        </div>
+                        <hr>
+
+                        <h5 class="mt-4">Harshita Devnani</h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-telephone fs-5 me-3" style="color: var(--primary-blue);"></i>
+                            <a href="tel:9351023881" class="text-decoration-none" style="color: var(--text-gray);">9509326676</a>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="bi bi-envelope fs-5 me-3" style="color: var(--primary-blue);"></i>
+                            <a href="mailto:23ucc546@lnmiit.ac.in" class="text-decoration-none" style="color: var(--text-gray);">23ucc546@lnmiit.ac.in</a>
+                        </div>
+                        <hr>
+
+                        <h5 class="mt-4">Bhavy Watts</h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-telephone fs-5 me-3" style="color: var(--primary-blue);"></i>
+                            <a href="tel:9145940127" class="text-decoration-none" style="color: var(--text-gray);">9145940127</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-envelope fs-5 me-3" style="color: var(--primary-blue);"></i>
+                            <a href="mailto:23ucs556@lnmiit.ac.in" class="text-decoration-none" style="color: var(--text-gray);">23ucs556@lnmiit.ac.in</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card-custom">
+                        <h3 class="mb-4">Send Us a General Message</h3>
+                        <form action="/contact" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Health Center</h5>
+                    <p>Your AI-powered health companion, providing insights for a healthier tomorrow.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Disclaimer</h5>
+                    <p class="small">This tool is for informational purposes and is not a substitute for professional medical advice. Always consult a doctor for any health concerns.</p>
+                </div>
+            </div>
+            <div class="bottom-bar text-center">
+                 &copy; 2025 Health Center. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

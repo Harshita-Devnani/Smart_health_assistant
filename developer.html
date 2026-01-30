@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meet the Developers - Health Care Center</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <div class="logo me-2">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
+            </div>
+            Health Center
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/blog' %}active{% endif %}" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {% if request.path in ['/about', '/developer', '/contact'] %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/about">About Us</a></li>
+                        <li><a class="dropdown-item" href="/developer">Our Team</a></li>
+                        <li><a class="dropdown-item" href="/contact">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Meet the Developers</h1>
+            <p class="lead">The passionate team harnessing technology for a healthier future.</p>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="developer-card">
+                        <div class="avatar"><i class="bi bi-person"></i></div>
+                        <h5>Lahar Joshi</h5>
+                        <p>AI & ML Developer</p>
+                        <div class="bio my-3"><p class="mb-0">A dedicated developer with a passion for building intelligent systems that solve real-world problems in the healthcare sector.</p></div>
+                        <div class="contact-info">
+                            <a href="tel:9351023881" class="d-block mb-2"><i class="bi bi-telephone me-2"></i>9351023881</a>
+                            <a href="mailto:23ucc566@lnmiit.ac.in" class="d-block"><i class="bi bi-envelope me-2"></i>23ucc566@lnmiit.ac.in</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="developer-card">
+                        <div class="avatar"><i class="bi bi-person"></i></div>
+                        <h5>Harshita Devnani</h5>
+                        <p>AI & ML Developer</p>
+                        <div class="bio my-3"><p class="mb-0">An innovative thinker focused on machine learning models and data-centric solutions to enhance medical diagnostics and accessibility.</p></div>
+                        <div class="contact-info">
+                            <a href="tel:9509326676" class="d-block mb-2"><i class="bi bi-telephone me-2"></i>9509326676</a>
+                            <a href="mailto:23ucc546@lnmiit.ac.in" class="d-block"><i class="bi bi-envelope me-2"></i>23ucc546@lnmiit.ac.in</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="developer-card">
+                        <div class="avatar"><i class="bi bi-person"></i></div>
+                        <h5>Bhavy Watts</h5>
+                        <p>AI & ML Developer</p>
+                        <div class="bio my-3"><p class="mb-0">A skilled engineer committed to creating seamless user experiences powered by complex algorithms and cutting-edge technology.</p></div>
+                        <div class="contact-info">
+                            <a href="tel:9145940127" class="d-block mb-2"><i class="bi bi-telephone me-2"></i>9145940127</a>
+                            <a href="mailto:23ucs556@lnmiit.ac.in" class="d-block"><i class="bi bi-envelope me-2"></i>23ucs556@lnmiit.ac.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class="text-center mt-5 pt-5 border-top">With Special Regards To Our Mentor</h2>
+                </div>
+                <div class="col-lg-10 mt-4">
+                    <div class="card-custom mentor-card">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-4 text-center">
+                                <div class="mentor-photo-placeholder">
+                                    <i class="bi bi-person-bounding-box"></i>
+                                    <p class="mt-2 small">Photo</p>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mentor-details">
+                                <h3>Dr. Gaurav Verma</h3>
+                                <p class="lead mb-3">Project Mentor</p>
+                                <p class="regards">"The successful completion of this project was made possible by the invaluable guidance and mentorship of Dr. Gaurav Verma. His expertise in the field and unwavering support were instrumental in shaping our approach and achieving our goals. We are sincerely grateful for his contribution."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Health Center</h5>
+                    <p>Your AI-powered health companion, providing insights for a healthier tomorrow.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Disclaimer</h5>
+                    <p class="small">This tool is for informational purposes and is not a substitute for professional medical advice. Always consult a doctor for any health concerns.</p>
+                </div>
+            </div>
+            <div class="bottom-bar text-center">
+                 &copy; 2025 Health Center. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

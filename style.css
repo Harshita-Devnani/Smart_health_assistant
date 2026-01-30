@@ -1,0 +1,252 @@
+/* static/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #6EB5DD;
+  --primary-blue-dark: #5a9cc7;
+  --light-blue-bg: #F0F8FF;
+  --dark-blue-text: #003366;
+  --text-gray: #555;
+  --white: #FFFFFF;
+  --border-color: #dee2e6;
+  --box-shadow: 0 4px 15px rgba(0, 40, 80, 0.08);
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* --- General Body & Typography --- */
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-blue-bg);
+  color: var(--text-gray);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-blue-text);
+  font-weight: 600;
+}
+
+/* --- Navbar --- */
+.navbar-custom {
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: 0.8rem 1rem;
+}
+.navbar-custom .navbar-brand {
+  color: var(--dark-blue-text);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+.navbar-custom .nav-link {
+  color: var(--dark-blue-text);
+  font-weight: 500;
+}
+.navbar-custom .nav-link.active,
+.navbar-custom .nav-link:hover {
+  color: var(--primary-blue);
+}
+.navbar-custom .logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* --- Hero Section (Homepage) --- */
+.hero-section {
+    background: linear-gradient(135deg, #EAF6FF, #D1E9FA);
+    padding: 5rem 1rem;
+    text-align: center;
+}
+.hero-section h1 { font-size: 2.8rem; font-weight: 700; }
+.hero-section .lead {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    max-width: 650px;
+    margin: 1rem auto 2.5rem auto;
+}
+
+/* --- Page Header (For inner pages) --- */
+.page-header {
+    background: var(--white);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-section { padding: 4rem 0; }
+
+/* --- Cards & Content Sections --- */
+.card-custom {
+  background-color: var(--white);
+  border: none;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
+  height: 100%;
+}
+
+/* --- Team & Developer Cards --- */
+.team-card, .developer-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+.team-card:hover, .developer-card:hover { transform: translateY(-5px); }
+.team-card h5, .developer-card h5 {
+    color: var(--dark-blue-text);
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+.team-card p, .developer-card p {
+    color: var(--primary-blue);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.team-card .avatar, .developer-card .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: var(--light-blue-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    border: 3px solid var(--primary-blue);
+}
+
+.developer-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.developer-card .avatar { width: 120px; height: 120px; margin-bottom: 1.5rem; font-size: 3rem; }
+.developer-card .bio {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    flex-grow: 1;
+}
+.developer-card .contact-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+.developer-card .contact-info a {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+.developer-card .contact-info a:hover { color: var(--primary-blue); }
+
+/* --- Mentor Section --- */
+.mentor-card {
+    background-color: #EAF6FF; /* A slightly different background */
+    border: 1px solid var(--primary-blue);
+}
+.mentor-photo-placeholder {
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--white);
+    border: 2px dashed var(--primary-blue);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--primary-blue);
+}
+.mentor-photo-placeholder .bi {
+    font-size: 4rem;
+}
+.mentor-details h3 {
+    color: var(--dark-blue-text);
+}
+.mentor-details .lead {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+.mentor-details .regards {
+    font-style: italic;
+    color: var(--text-gray);
+}
+
+
+/* --- Forms & Buttons --- */
+.form-control {
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+}
+.form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(110, 181, 221, 0.25);
+}
+.btn {
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.btn-primary { background-color: var(--primary-blue); color: var(--white); }
+.btn-primary:hover { background-color: var(--primary-blue-dark); color: var(--white); }
+
+/* --- Results Display --- */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+.result-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: var(--dark-blue-text);
+    text-decoration: none;
+    display: block;
+}
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+.result-card .icon {
+    font-size: 2.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+.result-card span { font-weight: 500; }
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--dark-blue-text);
+    color: #a9cce3;
+    padding: 2.5rem 0;
+    margin-top: 3rem;
+}
+.footer h5 { color: var(--white); font-weight: 600; }
+.footer p, .footer a { color: #a9cce3; text-decoration: none; }
+.footer a:hover { color: var(--white); text-decoration: underline; }
+.footer .bottom-bar {
+    border-top: 1px solid #1a4c78;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
